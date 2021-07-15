@@ -1,24 +1,63 @@
-# NgxIkPagination
+# Angular Pagination (ngx-ik-pagination)
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.13.
+## Install
 
-## Code scaffolding
+```
+npm i ngx-ik-pagination --save
+```
 
-Run `ng generate component component-name --project ngx-ik-pagination` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-ik-pagination`.
-> Note: Don't forget to add `--project ngx-ik-pagination` or else it will be added to the default project in your `angular.json` file. 
+```
+yarn add ngx-ik-pagination
+```
 
-## Build
+## Usage
 
-Run `ng build ngx-ik-pagination` to build the project. The build artifacts will be stored in the `dist/` directory.
+Import `NgxIkPaginationModule` to your module
 
-## Publishing
+```typescript
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppComponent } from "./app";
 
-After building your library with `ng build ngx-ik-pagination`, go to the dist folder `cd dist/ngx-ik-pagination` and run `npm publish`.
+import { NgxIkPaginationModule } from "ngx-ik-pagination";
 
-## Running unit tests
+@NgModule({
+  imports: [BrowserModule, NgxIkPaginationModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
 
-Run `ng test ngx-ik-pagination` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+import { Component } from "@angular/core";
 
-## Further help
+@Component({
+  selector: "example-app",
+  template: ` <div>
+    <ngx-ik-pagination
+      [length]="100"
+      [pageSize]="9"
+      (onPageEvent)="onPageEvent($event)"
+    ></ngx-ik-pagination>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    <p>Page Size: {{ paginationResponse.pageSize }}</p>
+    <p>Page Number: {{ paginationResponse.pageNumber }}</p>
+    <p>Offset: {{ paginationResponse.offset }}</p>
+  </div>`,
+})
+export class AppComponent {
+  paginationResponse: any;
+  onPageEvent(e) {
+    this.paginationResponse = e;
+  }
+}
+```
+
+## Support ngx-ik-pagination
+
+ngx-ik-pagination is completely free and open-source. If you find it useful, you can show your support by 🌟 it or sharing it in your social network.
+
+## License
+
+[MIT](LICENSE)
