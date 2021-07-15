@@ -1,0 +1,27 @@
+{
+  "name": "ngx-ik-pagination",
+  "version": "1.0.0",
+  "description": "Pagination for Angular",
+  "peerDependencies": {
+    "@angular/common": "^9.1.13",
+    "@angular/core": "^9.1.13"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
+  },
+  "keywords": [
+    "pagination",
+    "ng2",
+    "angular"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ismetkizgin/ngx-ik-pagination.git"
+  },
+  "author": "İsmet Kizgin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ismetkizgin/ngx-ik-pagination/issues"
+  },
+  "homepage": "https://github.com/ismetkizgin/ngx-ik-pagination#readme"
+}
