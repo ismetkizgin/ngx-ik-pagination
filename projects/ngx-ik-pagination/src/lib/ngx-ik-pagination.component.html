@@ -1,0 +1,31 @@
+<div class="ik-pagination {{ class }}" *ngIf="length != 0 && length > pageSize">
+  <a [class.disabled]="chosenPageNumber == 1" (click)="onBackPage()">&laquo;</a>
+  <a
+    [hidden]="!(getPageLength() > 5 && chosenPageNumber > 3)"
+    (click)="onSelectPage(1)"
+    class="point"
+    >...</a
+  >
+
+  <a
+    *ngFor="let pageNumber of pageNumbers"
+    [class.active]="pageNumber === chosenPageNumber"
+    class="item"
+    (click)="onSelectPage(pageNumber)"
+  >
+    <span>{{ pageNumber }}</span>
+  </a>
+
+  <a
+    [hidden]="!(getPageLength() - 2 > chosenPageNumber)"
+    (click)="onSelectPage(getPageLength())"
+    class="point"
+    >...</a
+  >
+
+  <a
+    [class.disabled]="chosenPageNumber == getPageLength()"
+    (click)="onNextPage()"
+    >&raquo;</a
+  >
+</div>

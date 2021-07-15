@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve ngx-ik-pagination-example",
+    "build": "ng build ngx-ik-pagination",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "publish": "npm publish dist/ngx-ik-pagination/",
+    "release": "standard-version"
   },
   "private": true,
   "dependencies": {
