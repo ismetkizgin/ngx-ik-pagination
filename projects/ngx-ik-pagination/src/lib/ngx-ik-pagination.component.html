@@ -1,4 +1,7 @@
-<div class="ik-pagination {{ class }}" *ngIf="length != 0 && length > pageSize">
+<div
+  class="ik-pagination {{ class }} {{ theme }}"
+  *ngIf="length != 0 && length > pageSize"
+>
   <a [class.disabled]="chosenPageNumber == 1" (click)="onBackPage()">&laquo;</a>
   <a
     [hidden]="!(getPageLength() > 5 && chosenPageNumber > 3)"

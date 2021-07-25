@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Theme } from './model/theme';
 
 @Component({
   selector: 'ngx-ik-pagination',
@@ -13,6 +14,7 @@ export class NgxIkPaginationComponent implements OnInit {
   chosenPageNumber: number = 1;
   pageNumbers: Array<number> = [];
   @Output() onPageEvent = new EventEmitter();
+  @Input() theme: Theme = Theme.light;
 
   ngOnInit(): void {
     this.updatePageNumbers();

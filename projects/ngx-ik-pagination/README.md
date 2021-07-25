@@ -29,6 +29,12 @@ import { NgxIkPaginationModule } from "ngx-ik-pagination";
 export class AppModule {}
 ```
 
+Component has 3 themes in total.
+
+- light (defult)
+- dark
+- transparent
+
 ```typescript
 import { Component } from "@angular/core";
 
@@ -39,6 +45,7 @@ import { Component } from "@angular/core";
       [length]="100"
       [pageSize]="9"
       (onPageEvent)="onPageEvent($event)"
+      theme="dark"
     ></ngx-ik-pagination>
 
     <p>Page Size: {{ paginationResponse.pageSize }}</p>
